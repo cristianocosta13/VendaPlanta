@@ -9,11 +9,6 @@ type Planta struct {
 }
 
 func (p Planta) Exibir() {
-	if p.Preco >= 0.99 {
-		fmt.Print("Espécie: ", p.Especie, "\nPorte: ", p.Porte, "\nCor: ", p.Cor, "\nPreço: ",
-			p.Preco, "\nCódigo: ", p.Codigo, "\nDescrição: ", p.Descricao)
-	} else {
-		//reterun error()
-		fmt.Print("Preço inválido!")
-	}
+	fmt.Print("Espécie: ", p.Especie, "\nPorte: ", p.Porte, "\nCor: ", p.Cor, "\nPreço: ",
+		p.Preco, "\nCódigo: ", p.Codigo, "\nDescrição: ", p.Descricao)
 }
