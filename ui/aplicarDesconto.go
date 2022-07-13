@@ -7,7 +7,7 @@ import (
 
 func AplicarDesconto(planta modelos.Planta) float32 {
 	var desconto float32
-	fmt.Print("Insira o percental de desconto: ")
+	fmt.Print("Insira o percentual de desconto: ")
 	fmt.Scan(&desconto)
-	return (planta.Preco * desconto / 100)
+	return planta.Preco * desconto / 100
 }
