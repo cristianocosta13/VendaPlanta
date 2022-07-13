@@ -1,4 +1,4 @@
-package dados
+package data
 
 import (
 	"awesomeProject/modelos"
@@ -22,5 +22,5 @@ func BuscarClientePorCpf(cpf string) (*modelos.Cliente, error) {
 			return &c, nil
 		}
 	}
-	return nil, errors.New("Planta não encontrada!")
+	return nil, errors.New("Cliente não encontrado!")
 }
