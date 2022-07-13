@@ -1,7 +1,7 @@
 package ui
 
 import (
-	"awesomeProject/dados"
+	"awesomeProject/data"
 	"fmt"
 )
 
@@ -16,22 +16,22 @@ func VenderPlanta() {
 	fmt.Print("Insira o código da planta a ser comprada: ")
 	fmt.Scan(&codigo)
 
-	planta, erroPlanta := BuscarPorCod(codigo)
-	_, erroCliente := BuscarClientePorCpf(cpfCliente)
-	_, erroVendedor := BuscarVendedorPorCpf(cpfVendedor)
+	planta, erroPlanta := data.BuscarPorCod(codigo)
+	_, erroCliente := data.BuscarClientePorCpf(cpfCliente)
+	_, erroVendedor := data.BuscarVendedorPorCpf(cpfVendedor)
 
-	if erroPlanta!=nil && erroCliente!=nil && erroVendedor!=nil {
-		//planta.Estoque--
-		valorDescontado := AplicarDesconto(planta)
-		troco, erroSaldo := PagarCompra(valorDescontado)
+	if erroPlanta == nil && erroCliente == nil && erroVendedor == nil {
+		planta.Estoque-- //não está decrementando, problema no ponteiro
+		valorDescontado := AplicarDesconto(*planta)
+		troco, erroSaldo, valorPendente := PagarCompra(valorDescontado, *planta)
 		if erroSaldo != nil {
-			fmt.Print(erroSaldo)
-		}else{
+			fmt.Print(erroSaldo, "\nO cliente deve pagar mais R$", valorPendente)
+		} else {
 			fmt.Print("O troco do cliente é R$", troco)
 		}
-	}else {
+	} else {
 		fmt.Print("ERRO PLANTA: ", erroPlanta)
-		fmt.Print("ERRO CLIENTE: ", erroCliente)
-		fmt.Print("ERRO VENDEDOR: ", erroVendedor)
+		fmt.Println("ERRO CLIENTE: ", erroCliente)
+		fmt.Println("ERRO VENDEDOR: ", erroVendedor)
 	}
 }
