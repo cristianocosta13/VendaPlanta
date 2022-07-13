@@ -1,8 +1,9 @@
 package ui
 
 import (
+	"awesomeProject/data"
 	"awesomeProject/modelos"
-	"awesomeProject/dados"
+	"errors"
 	"fmt"
 )
 
@@ -34,10 +35,13 @@ func CadastrarPlantas() (*modelos.Planta, error) {
 		Preco:     preco,
 		Estoque:   estoque,
 		Descricao: descricao,
-		Codigo: codigo,
+		Codigo:    codigo,
 	}
 	if especie != "" && cor != "" && porte != "" && preco != 0 && descricao != "" && codigo != 0 {
-		dados.SalvarPlanta(planta)
+		data.SalvarPlanta(planta)
 		return &planta, nil
 	}
+
+	return nil, errors.New("Dados incompativeis ou não totalmente preenchidos")
 }
+
