@@ -9,6 +9,6 @@ type Vendedor struct {
 	Plantas             []Planta
 }
 
-func (Vendedor) exibirVendedor(nome, cpf, telefone string) {
-	fmt.Print("Nome: ", nome, "\nCPF: ", cpf, "\nTelefone: ", telefone)
+func (v Vendedor) Vendedor() {
+	fmt.Print("Nome: ", v.Nome, "\nCPF: ", v.Cpf, "\nTelefone: ", v.Telefone)
 }
