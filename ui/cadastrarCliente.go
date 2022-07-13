@@ -1,7 +1,7 @@
 package ui
 
 import (
-	"awesomeProject/dados"
+	"awesomeProject/data"
 	"awesomeProject/modelos"
 	"errors"
 	"fmt"
@@ -27,7 +27,7 @@ func CadastrarCliente() (*modelos.Cliente, error) {
 		Cpf:      cpf,
 	}
 	if nome != "" && endereco != "" && telefone != "" && cpf != "" {
-		dados.SalvarCliente(cliente)
+		data.SalvarCliente(cliente)
 		return &cliente, nil
 	}
 
