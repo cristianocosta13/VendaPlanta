@@ -5,22 +5,22 @@ import (
 	"errors"
 )
 
-var plantas []modelos.Planta
+var vendedores []modelos.Vendedor
 
-//func SalvarPlanta(planta modelos.Planta) {
-//	plantas = append(plantas, planta)
+//func SalvarVendedor(vendedor modelos.Vendedor) {
+//	vendedores = append(vendedores, vendedor)
 //}
 
-func SalvarPlanta(planta modelos.Planta) []modelos.Planta {
-	plantas = append(plantas, planta)
-	return plantas
+func SalvarVendedor(vendedor modelos.Vendedor) []modelos.Vendedor {
+	vendedores = append(vendedores, vendedor)
+	return vendedores
 }
 
-func BuscarPorCod(cod int) (*modelos.Planta, error) {
-	for _, p := range plantas {
-		if p.Codigo == cod {
-			return &p, nil
+func BuscarVendedorPorCpf(cpf string) (*modelos.Vendedor, error) {
+	for _, v := range vendedores {
+		if v.Cpf == cpf {
+			return &v, nil
 		}
 	}
-	return nil, errors.New("Planta não encontrada!")
+	return nil, errors.New("Vendedor não encontrado!")
 }
