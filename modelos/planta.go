@@ -12,4 +12,3 @@ func (p Planta) Planta() {
 	fmt.Print("Espécie: ", p.Especie, "\nPorte: ", p.Porte, "\nCor: ", p.Cor, "\nPreço: ",
 		p.Preco, "\nCódigo: ", p.Codigo, "\nDescrição: ", p.Descricao, "\nEstoque: ", p.Estoque)
 }
-
