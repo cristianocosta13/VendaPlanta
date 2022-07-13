@@ -14,7 +14,7 @@ func main() {
 
 	for opc != 6 {
 		fmt.Print("\nMENU:\n1. CADASTROS" +
-			"\n2. VENDER PLANTA\n3. EXIBIÇÕES\n4. EXCLUSÕES\n5. CONSULTAR ESTOQUE\n6. SAIR\n")
+			"\n2. VENDER PLANTA\n3. EXIBIÇÕES\n4. CONSULTAR ESTOQUE\n5. SAIR\n")
 		fmt.Println("Insira sua opção de acordo com o número correspondente: ")
 		fmt.Scan(&opc)
 
@@ -25,9 +25,7 @@ func main() {
 		} else if opc == 3 {
 			Exibicoes()
 		} else if opc == 4 {
-			Exclusoes()
-		} else if opc == 5 {
-			fmt.Print("INDISPONÍVEL")
+			fmt.Print("OPÇÃO INDISPONÍVEL")
 		} else {
 			fmt.Print("\nOpção inválida\n")
 		}
@@ -97,6 +95,4 @@ func Exibicoes() {
 	}
 }
 
-func Exclusoes() {
-	fmt.Print("INDISPONÍVEL")
-}
+
