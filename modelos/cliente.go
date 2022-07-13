@@ -6,7 +6,6 @@ type Cliente struct {
 	Nome, Telefone, Endereco, Cpf string
 }
 
-
-func (Cliente) exibirCliente(Nome, Telefone, Endereco, Cpf string) {
-	fmt.Print("Nome: ", Nome, "\nCPF: ", Cpf, "\nTelefone: ", Telefone)
+func (c Cliente) Cliente() {
+	fmt.Print("Nome: ", c.Nome, "\nCPF: ", c.Cpf, "\nTelefone: ", c.Telefone)
 }
