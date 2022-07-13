@@ -29,4 +29,3 @@ func CadastrarVendedor() (*modelos.Vendedor, error) {
 	}
 	return nil, errors.New("Dados incompativeis ou não totalmente preenchidos")
 }
-
