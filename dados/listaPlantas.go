@@ -1,4 +1,4 @@
-package dados
+package data
 
 import (
 	"awesomeProject/modelos"
