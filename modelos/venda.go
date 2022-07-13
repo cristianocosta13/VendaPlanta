@@ -1,6 +1,6 @@
 package modelos
 
-type VendaPlanta struct {
+type Venda struct {
 	Planta   Planta
 	Vendedor Vendedor
 	Cliente  Cliente
