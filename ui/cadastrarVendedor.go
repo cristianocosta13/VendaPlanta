@@ -1,8 +1,9 @@
 package ui
 
 import (
+	"awesomeProject/data"
 	"awesomeProject/modelos"
-	"awesomeProject/dados"
+	"errors"
 	"fmt"
 )
 
@@ -23,7 +24,9 @@ func CadastrarVendedor() (*modelos.Vendedor, error) {
 		Telefone: telefone,
 	}
 	if nome != "" && telefone != "" && cpf != "" {
-		dados.SalvarVendedor(vendedor)
+		data.SalvarVendedor(vendedor)
 		return &vendedor, nil
 	}
+	return nil, errors.New("Dados incompativeis ou não totalmente preenchidos")
 }
+
